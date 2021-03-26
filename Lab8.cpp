@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-// global varible and array which will be accessible in every every function
+// global variable and array which will be accessible in every function
 int C[5000];
 int p;
 
@@ -11,7 +11,7 @@ int p;
 int  LiearIndx(int n)
 {
     int A[n][n];
-    int B[n*(n+1)/2]; // 1-dimensional array to store the lower-trangular elements 
+    int B[n*(n+1)/2]; // 1-dimensional array to store the lower-triangular elements 
     
     
     // for loop to fill the elements in array A[][] randomly
@@ -24,22 +24,22 @@ int  LiearIndx(int n)
         }
     }
     int a=-1;
-    // nested for loop to check for only lower-trangular elements
+    // nested for loop to check for only lower-triangular elements
     for(int i =0; i <n; ++i)
     {
         for(int j = 0; j <= i; ++j)
         { 
             a++; // variable a which will keep incrementing the size of array B
-            cout<<" "<<A[i][j];  // Displaying out the lower-trangular elements in 1-dimensional array 
+            cout<<" "<<A[i][j];  // Displaying out the lower-triangular elements in 1-dimensional array 
             B[a]=A[i][j]; //  
 
         }
         cout<<endl;
     }
-    cout<<" lower-trangular elements in 1-dimensional array:"<<endl;
+    cout<<" lower-triangular elements in 1-dimensional array: "<<endl;
     for(int k = 0; k <n*(n+1)/2; ++k)
     {
-        cout<<" "<<B[k];  // displying out the lower-trangular elements in 1-dimensional array
+        cout<<" "<<B[k];  // displaying the lower-triangular elements in 1-dimensional array
        
         
         //the global variable and array which access the information from the function LiearIndx()
@@ -53,7 +53,7 @@ int  LiearIndx(int n)
 }
 
 
-// InverseIdx() function to which reverse 1-dimensional array of corresponding elements in A[][]
+// InverseIdx() function which reverse 1-dimensional array of corresponding elements in A[][]
 int  InverseIdx(){
         for(int r=p;r>=0;r--){
             cout<<" "<<C[r];
@@ -67,20 +67,17 @@ int main(){
     
     /* 
     calling the LiearIndx() , and InverseIdx() function.
-    for example: A[8][8], A[32][32], or A[128][128] can be displayed as below
+    for example the lower-triangular elements of A[8][8], A[32][32], or A[128][128] can be displayed as below
     
     */
     
-    // for A[8][8]
-    
+    // for A[8][8] 
     LiearIndx(8);
     cout<<endl;
     cout<<" The reverse will be: "<<endl;
     cout<<endl;
     InverseIdx();
     
-    
-
- 
+  
 }
 
